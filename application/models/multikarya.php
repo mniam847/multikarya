@@ -3,15 +3,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class multikarya extends CI_Model
 {
-    public function getLogin($data) //dapat session
-    {
+    //login
+    public function getLogin($data){
         return $this->db->get_where('user', $data)->result_array();
-    }
-
-    public function registerUser($data)
-    {
-        $res = $this->db->insert('user', $data);
-        return $res;
     }
 
     public function getData($dataBase, $where)
