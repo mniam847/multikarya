@@ -28,31 +28,9 @@
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid">
-        <div class="row bg-secondary py-2 px-xl-5 ">
-
-            <div class="col-lg-12 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a class="text-dark pl-2" href="">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
         <div class="row align-items-center py-3 px-xl-5">
             <div class="col-lg-4 d-none d-lg-block">
-                <a href="" class="text-decoration-none">
+                <a href="<?= base_url() ?>" class="text-decoration-none">
                     <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">CV</span>Multi Karya</h1>
                 </a>
             </div>
@@ -87,11 +65,11 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="shop.html" class="nav-item nav-link">Product</a>
-                            <a href="detail.html" class="nav-item nav-link">Portofolio</a>
-                            <a href="detail.html" class="nav-item nav-link">About</a>
-                            <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                            <a href="<?= base_url() ?>" class="nav-item nav-link active">Home</a>
+                            <a href="<?= base_url("product") ?>" class="nav-item nav-link">Product</a>
+                            <a href="<?= base_url("home/portofolio") ?>" class="nav-item nav-link">Portofolio</a>
+                            <a href="<?= base_url("profil") ?>" class="nav-item nav-link">About</a>
+                            <a href="<?= base_url("profil/contact") ?>" class="nav-item nav-link">Contact Us</a>
                         </div>
 
                     </div>
