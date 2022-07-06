@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -58,7 +58,11 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
+<<<<<<< Updated upstream
 $autoload['libraries'] = array('database', 'session');
+=======
+$autoload['libraries'] = array('database');
+>>>>>>> Stashed changes
 
 /*
 | -------------------------------------------------------------------
@@ -89,7 +93,11 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
+<<<<<<< Updated upstream
 $autoload['helper'] = array('url', 'text');
+=======
+$autoload['helper'] = array('url');
+>>>>>>> Stashed changes
 
 /*
 | -------------------------------------------------------------------
