@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2022 at 05:56 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Jul 08, 2022 at 12:14 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -41,7 +42,7 @@ CREATE TABLE `about` (
 INSERT INTO `about` (`id`, `name`, `value`, `description`) VALUES
 (1, 'company', 'Multi Karya', 'Nama Perusahaan'),
 (2, 'address', 'jalanin aja dulu', 'Alamat Perusahaan'),
-(3, 'telp', '082223960591', 'Telepon official perusahaan'),
+(3, 'telp', '024', 'Telepon official perusahaan'),
 (4, 'email', 'multikarya@gmail.com', 'Email Perusahaan'),
 (5, 'foreword', 'Multi Karya adalah bidang usaha jasa yang berjalan pada usaha percetakan, layanan kami meliputi pembuatan iklan melalui baligo, spanduk, stiker, banner, dan lain-lain.', 'Kata pengantar');
 
@@ -64,7 +65,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `name`, `email`, `subject`, `message`) VALUES
-(1, 'Wahyu Rochman Bantoro', 'whyrchmn19@gmail.com', 'Pelayanan', 'bintang 5');
+(1, 'coba', 'coba@gmail.com', 'apa aja', 'semuanya apa aja boleh semngat trus');
 
 -- --------------------------------------------------------
 
@@ -125,7 +126,7 @@ CREATE TABLE `testimoni` (
   `id` int(191) NOT NULL,
   `name` varchar(255) NOT NULL,
   `message` text NOT NULL,
-  `no_invoice` varchar(191) NOT NULL,
+  `email` varchar(191) NOT NULL,
   `star` int(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -133,8 +134,9 @@ CREATE TABLE `testimoni` (
 -- Dumping data for table `testimoni`
 --
 
-INSERT INTO `testimoni` (`id`, `name`, `message`, `no_invoice`, `star`) VALUES
-(1, 'customer 1', 'baik sekali', '0001', 5);
+INSERT INTO `testimoni` (`id`, `name`, `message`, `email`, `star`) VALUES
+(1, 'customer 1', 'baik sekali', 'custom@gmail.com', 5),
+(2, 'customer 99', 'Memuaskan sekali', 'custom99@gmail.com', 4);
 
 -- --------------------------------------------------------
 
@@ -228,7 +230,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `testimoni`
 --
 ALTER TABLE `testimoni`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
