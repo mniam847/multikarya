@@ -6,11 +6,13 @@ class Product extends CI_Controller
 
     public function index()
     {
-        $this->load->view('shop/shop');
+        $data['product'] = $this->multikarya->getAll("product");
+        $this->load->view('shop/shop', $data);
     }
 
-    public function detail()
+    public function detail($id)
     {
-        $this->load->view('shop/detail');
+        $data['product'] = $this->multikarya->getData("product", $id);
+        $this->load->view('shop/detail', $data);
     }
 }

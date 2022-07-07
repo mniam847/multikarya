@@ -6,7 +6,8 @@ class Home extends CI_Controller
 
     public function index()
     {
-        $this->load->view('shop/index');
+        $data['product'] = $this->multikarya->getAll("product");
+        $this->load->view('shop/index', $data);
     }
     public function portofolio()
     {
