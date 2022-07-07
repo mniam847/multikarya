@@ -89,7 +89,6 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="<?= base_url() ?>" class="nav-item nav-link">Home</a>
                             <a href="<?= base_url("product") ?>" class="nav-item nav-link active">Product</a>
-                            <a href="<?= base_url("home/portofolio") ?>" class="nav-item nav-link">Portofolio</a>
                             <a href="<?= base_url("profil") ?>" class="nav-item nav-link">About</a>
                             <a href="<?= base_url("contact") ?>" class="nav-item nav-link">Contact Us</a>
                         </div>

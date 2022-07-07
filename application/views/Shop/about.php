@@ -20,6 +20,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="<?= base_url("assets/shop/lib/owlcarousel/assets/owl.carousel.min.css") ?>" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
@@ -89,7 +90,6 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="<?= base_url() ?>" class="nav-item nav-link">Home</a>
                             <a href="<?= base_url("product") ?>" class="nav-item nav-link">Product</a>
-                            <a href="<?= base_url("home/portofolio") ?>" class="nav-item nav-link">Portofolio</a>
                             <a href="<?= base_url("profil") ?>" class="nav-item nav-link active">About</a>
                             <a href="<?= base_url("contact") ?>" class="nav-item nav-link">Contact Us</a>
                         </div>
@@ -159,7 +159,7 @@
                         <div class="nav nav-tabs justify-content-center border-secondary mb-4">
                             <a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-1">Description</a>
                             <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-2">Information</a>
-                            <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-3">Reviews (0)</a>
+                            <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-3">Reviews (<?= count($testimoni) ?>)</a>
                         </div>
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="tab-pane-1">
@@ -208,50 +208,54 @@
                             <div class="tab-pane fade" id="tab-pane-3">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <h4 class="mb-4">1 review for "Colorful Stylish Shirt"</h4>
-                                        <div class="media mb-4">
-                                            <img src="<?= base_url("assets/shop/img/user.jpg") ?>" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
-                                            <div class="media-body">
-                                                <h6>John Doe<small> - <i>01 Jan 2045</i></small></h6>
-                                                <div class="text-primary mb-2">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star-half-alt"></i>
-                                                    <i class="far fa-star"></i>
+                                        <h4 class="mb-4"><?= count($testimoni) ?> review</h4>
+                                        <?php foreach ($testimoni as $testimoni) : ?>
+                                            <div class="media mb-4">
+                                                <!-- <img src="<?= base_url("assets/shop/img/user.jpg") ?>" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;"> -->
+                                                <div class="media-body">
+                                                    <h6><?= $testimoni['name'] ?></h6>
+                                                    <div class="text-primary mb-2">
+                                                        <?php for ($x = 1; $x <= $testimoni['star']; $x++) { ?>
+                                                            <i class="fas fa-star"></i>
+                                                        <?php } ?>
+                                                    </div>
+                                                    <p><?= $testimoni['message'] ?>.</p>
                                                 </div>
-                                                <p>Diam amet duo labore stet elitr ea clita ipsum, tempor labore accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum.</p>
                                             </div>
-                                        </div>
+                                        <?php endforeach; ?>
                                     </div>
                                     <div class="col-md-6">
                                         <h4 class="mb-4">Leave a review</h4>
                                         <small>Your email address will not be published. Required fields are marked *</small>
-                                        <div class="d-flex my-3">
-                                            <p class="mb-0 mr-2">Your Rating * :</p>
-                                            <div class="text-primary">
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <form>
+
+                                        <form method="POST" action="<?php echo base_url(); ?>profil/createTestimoni">
                                             <div class="form-group">
                                                 <label for="message">Your Review *</label>
-                                                <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                                                <textarea id="message" cols="30" rows="5" class="form-control" name="message"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="name">Your Name *</label>
-                                                <input type="text" class="form-control" id="name">
+                                                <input type="text" class="form-control" id="name" name="name">
                                             </div>
                                             <div class="form-group">
                                                 <label for="email">Your Email *</label>
-                                                <input type="email" class="form-control" id="email">
+                                                <input type="email" class="form-control" id="email" name="email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Your Rating *</label>
+                                                <select class="form-select" aria-label="Default select example" name="star">
+                                                    <option selected>Select Your Rating</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
                                             </div>
                                             <div class="form-group mb-0">
-                                                <input type="submit" value="Leave Your Review" class="btn btn-primary px-3">
+
+                                                <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Leave Your Review</button>
+
                                             </div>
                                         </form>
                                     </div>

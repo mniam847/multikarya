@@ -24,6 +24,23 @@ class Profil extends CI_Controller
         $tempVar = $tempVar[0]["value"];
         $data['address'] = $tempVar;
         // ------------------------------------------------------------------------------------------------------------
+
+        $data['testimoni'] = $this->multikarya->getFew('testimoni', 'DESC', 3);
+
         $this->load->view('shop/about', $data);
+    }
+
+    public function createTestimoni()
+    {
+        // $data['user'] = $this->session->userdata('name');
+
+        $submit_data = array(
+            'name' => $this->input->post('name'),
+            'message' => $this->input->post('message'),
+            'email' => $this->input->post('email'),
+            'star' => $this->input->post('star')
+        );
+        $this->multikarya->inputData("testimoni", $submit_data);
+        redirect('profil', 'refresh');
     }
 }

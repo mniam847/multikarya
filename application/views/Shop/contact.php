@@ -89,7 +89,6 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="<?= base_url() ?>" class="nav-item nav-link">Home</a>
                             <a href="<?= base_url("product") ?>" class="nav-item nav-link">Product</a>
-                            <a href="<?= base_url("home/portofolio") ?>" class="nav-item nav-link">Portofolio</a>
                             <a href="<?= base_url("profil") ?>" class="nav-item nav-link">About</a>
                             <a href="<?= base_url("contact") ?>" class="nav-item nav-link active">Contact Us</a>
                         </div>
@@ -123,7 +122,7 @@
         <div class="row px-xl-5">
             <div class="col-lg-7 mb-5">
                 <div class="contact-form">
-                    <form  method="POST" action="<?php echo base_url(); ?>contact/createContact">
+                    <form method="POST" action="<?php echo base_url(); ?>contact/createContact">
                         <div class="control-group">
                             <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
                             <p class="help-block text-danger"></p>

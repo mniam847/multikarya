@@ -30,10 +30,10 @@ class Admin extends CI_Controller
         $data['totalproduct'] = count($this->multikarya->getAll("product"));
         $data['totalinvoice'] = count($this->multikarya->getAll("invoice"));
         $tempVar = $this->multikarya->getData("invoice", array('status' => 1));
-        $data['percentinvoice'] = number_format( (count($tempVar) * 100) / count($this->multikarya->getAll("invoice")), 2);
+        $data['percentinvoice'] = number_format((count($tempVar) * 100) / count($this->multikarya->getAll("invoice")), 2);
         $data['totalrecord'] = count($tempVar);
         $data['totalfeedback'] = count($this->multikarya->getAll("testimoni"));
-        $data['percentfeedback'] = number_format( (count($this->multikarya->getAll("testimoni")) * 100) / count($tempVar), 2);
+        $data['percentfeedback'] = number_format((count($this->multikarya->getAll("testimoni")) * 100) / count($tempVar), 2);
 
         $this->load->view('admin/dashboard', $data);
     }
@@ -193,13 +193,33 @@ class Admin extends CI_Controller
         $data['contacts'] = $this->multikarya->getAll("contact");
         $this->load->view('admincontact/index', $data);
     }
-    
+
     public function deleteContact($id)
     {
         $data['user'] = $this->session->userdata('name');
         $submit_data = array('id' => $id);
         $this->multikarya->deleteData("contact", $submit_data);
         redirect('admin/showInvoice', 'refresh');
+    }
+
+    // ============================================================================================
+    // ====================================================================================================
+    // Testimoni
+
+    public function showTestimoni()
+    {
+        $data['user'] = $this->session->userdata('name');
+
+        $data['testimonis'] = $this->multikarya->getAll("testimoni");
+        $this->load->view('admintestimoni/index', $data);
+    }
+
+    public function deleteTestimoni($id)
+    {
+        $data['user'] = $this->session->userdata('name');
+        $submit_data = array('id' => $id);
+        $this->multikarya->deleteData("testimoni", $submit_data);
+        redirect('admin/showTestimoni', 'refresh');
     }
 
     // ============================================================================================
