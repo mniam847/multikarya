@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2022 at 03:54 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Jul 07, 2022 at 05:04 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -48,6 +49,20 @@ INSERT INTO `about` (`id`, `name`, `value`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `invoice`
 --
 
@@ -68,7 +83,8 @@ CREATE TABLE `invoice` (
 
 INSERT INTO `invoice` (`id`, `name`, `product`, `message`, `date_input`, `dateline`, `status`, `price`) VALUES
 (1, 'customer 1', 1, 'cepat dikirim', '', '', 1, 150000),
-(2, 'customer 2', 1, 'packing rapi', '', '', 0, 150000);
+(2, 'customer 2', 1, 'packing rapi', '', '', 0, 150000),
+(3, 'Customer 3', 2, 'Apa aja', '2022-07-07', '2022-07-08', 2, 100000);
 
 -- --------------------------------------------------------
 
@@ -91,7 +107,7 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`id`, `name`, `category`, `price`, `picture`, `describe`) VALUES
 (1, 'Kamera', 'Aksesoris', 150000, 'cat-4.JPG', 'Apa aja boleh'),
-(2, 'Paper A4', 'ATK', 15000, 'default.jpg', 'Paper A4 1/4 pack');
+(2, 'customer 2', '', 150000, '', '');
 
 -- --------------------------------------------------------
 
@@ -145,6 +161,12 @@ ALTER TABLE `about`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `invoice`
 --
 ALTER TABLE `invoice`
@@ -179,10 +201,16 @@ ALTER TABLE `about`
   MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `product`
