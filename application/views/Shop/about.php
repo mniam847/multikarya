@@ -91,7 +91,7 @@
                             <a href="<?= base_url("product") ?>" class="nav-item nav-link">Product</a>
                             <a href="<?= base_url("home/portofolio") ?>" class="nav-item nav-link">Portofolio</a>
                             <a href="<?= base_url("profil") ?>" class="nav-item nav-link active">About</a>
-                            <a href="<?= base_url("profil/contact") ?>" class="nav-item nav-link">Contact Us</a>
+                            <a href="<?= base_url("contact") ?>" class="nav-item nav-link">Contact Us</a>
                         </div>
 
                     </div>

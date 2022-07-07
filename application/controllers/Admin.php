@@ -3,25 +3,37 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
-    public function __construct()
-    {
-        parent::__construct();
-        if ($this->session->userdata('status') != 'login') {
-            redirect('login');
-        }
-    }
 
     // index
     public function index()
     {
+        // template
+        // ------------------------------------------------------------------------------------------------------------
+        $tempVar = $this->multikarya->getData("about", array('name' => 'foreword'));
+        $tempVar = $tempVar[0]["value"];
+        $data['foreword'] = $tempVar;
+
+        $tempVar = $this->multikarya->getData("about", array('name' => 'telp'));
+        $tempVar = $tempVar[0]["value"];
+        $data['telp'] = $tempVar;
+
+        $tempVar = $this->multikarya->getData("about", array('name' => 'email'));
+        $tempVar = $tempVar[0]["value"];
+        $data['email'] = $tempVar;
+
+        $tempVar = $this->multikarya->getData("about", array('name' => 'address'));
+        $tempVar = $tempVar[0]["value"];
+        $data['address'] = $tempVar;
+        // ------------------------------------------------------------------------------------------------------------
+
         $data['user'] = $this->session->userdata('name');
         $data['totalproduct'] = count($this->multikarya->getAll("product"));
         $data['totalinvoice'] = count($this->multikarya->getAll("invoice"));
         $tempVar = $this->multikarya->getData("invoice", array('status' => 1));
-        $data['percentinvoice'] = (count($tempVar) * 100) / count($this->multikarya->getAll("invoice"));
+        $data['percentinvoice'] = number_format( (count($tempVar) * 100) / count($this->multikarya->getAll("invoice")), 2);
         $data['totalrecord'] = count($tempVar);
         $data['totalfeedback'] = count($this->multikarya->getAll("testimoni"));
-        $data['percentfeedback'] = (count($this->multikarya->getAll("testimoni")) * 100) / count($tempVar);
+        $data['percentfeedback'] = number_format( (count($this->multikarya->getAll("testimoni")) * 100) / count($tempVar), 2);
 
         $this->load->view('admin/dashboard', $data);
     }
@@ -171,4 +183,24 @@ class Admin extends CI_Controller
         $data['record'] = $this->multikarya->getData("invoice", array('status' => '1'));
         $this->load->view('adminRecord/index', $data);
     }
+    // ====================================================================================================
+    // Contact
+
+    public function showContact()
+    {
+        $data['user'] = $this->session->userdata('name');
+
+        $data['contacts'] = $this->multikarya->getAll("contact");
+        $this->load->view('admincontact/index', $data);
+    }
+    
+    public function deleteContact($id)
+    {
+        $data['user'] = $this->session->userdata('name');
+        $submit_data = array('id' => $id);
+        $this->multikarya->deleteData("contact", $submit_data);
+        redirect('admin/showInvoice', 'refresh');
+    }
+
+    // ============================================================================================
 }

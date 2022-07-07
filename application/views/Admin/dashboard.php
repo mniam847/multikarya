@@ -91,9 +91,9 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url(); ?>admin/showportofolio">
+                <a class="nav-link" href="<?php echo base_url(); ?>admin/showContact">
                     <i class="fa-solid fa-image"></i>
-                    <span>Portofolio</span>
+                    <span>Contact Us</span>
                 </a>
             </li>
 

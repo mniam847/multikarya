@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2022 at 05:04 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Jul 07, 2022 at 05:56 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -42,7 +41,7 @@ CREATE TABLE `about` (
 INSERT INTO `about` (`id`, `name`, `value`, `description`) VALUES
 (1, 'company', 'Multi Karya', 'Nama Perusahaan'),
 (2, 'address', 'jalanin aja dulu', 'Alamat Perusahaan'),
-(3, 'telp', '024', 'Telepon official perusahaan'),
+(3, 'telp', '082223960591', 'Telepon official perusahaan'),
 (4, 'email', 'multikarya@gmail.com', 'Email Perusahaan'),
 (5, 'foreword', 'Multi Karya adalah bidang usaha jasa yang berjalan pada usaha percetakan, layanan kami meliputi pembuatan iklan melalui baligo, spanduk, stiker, banner, dan lain-lain.', 'Kata pengantar');
 
@@ -59,6 +58,13 @@ CREATE TABLE `contact` (
   `subject` varchar(255) NOT NULL,
   `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `email`, `subject`, `message`) VALUES
+(1, 'Wahyu Rochman Bantoro', 'whyrchmn19@gmail.com', 'Pelayanan', 'bintang 5');
 
 -- --------------------------------------------------------
 
@@ -204,7 +210,7 @@ ALTER TABLE `about`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `invoice`

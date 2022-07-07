@@ -68,7 +68,7 @@
                 </a>
             </li> -->
 
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url(); ?>admin/showProduct">
                     <i class="fa-solid fa-database"></i>
                     <span>Product</span>
@@ -89,7 +89,7 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item  active">
                 <a class="nav-link" href="<?php echo base_url(); ?>admin/showContact">
                     <i class="fa-solid fa-image"></i>
                     <span>Contact Us</span>
@@ -209,89 +209,73 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Invoice</h1>
-                    <p class="mb-4">Data yang menampilkan seluruh invoice yang dimiliki</a>.</p>
+                    <h1 class="h3 mb-2 text-gray-800">Data Record</h1>
+                    <p class="mb-4">Data yang menampilkan seluruh record yang dimiliki</a>.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 grid" style="--bs-columns: 10; --bs-gap: 1rem;">
-                            <h6 class="m-0 font-weight-bold text-primary g-col-6">DataInvoice</h6>
+                            <h6 class="m-0 font-weight-bold text-primary g-col-6">DataRecord</h6>
                         </div>
-                        <div class="card-body col-sm-8">
-                            <form action="<?= base_url('admin/createInvoice'); ?>" method="post">
-                                <div class="form-group row">
-                                    <label for="1" class="col-sm-2  col-form-label">Nama Invoice</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="1" name="name" placeholder="Tulis nama produk" autocomplete="off">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="2" class="col-sm-2  col-form-label">Product</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="2" name="product" placeholder="Tulis kategori produk" autocomplete="off">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="3" class="col-sm-2  col-form-label">Message</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="3" name="message" placeholder="Masukkan harga produk" autocomplete="off">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="4" class="col-sm-2  col-form-label">Tanggal Pesanan</label>
-                                    <div class="col-sm-5">
-                                        <input type="date" class="form-control" id="3" name="date_input" placeholder="Masukkan keterangan" autocomplete="off">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="4" class="col-sm-2  col-form-label">Tanggal Berakhir</label>
-                                    <div class="col-sm-5">
-                                        <input type="date" class="form-control" id="3" name="dateline" placeholder="Masukkan keterangan" autocomplete="off">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="4" class="col-sm-2  col-form-label">Harga</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="3" name="price" placeholder="Masukkan keterangan" autocomplete="off">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="4" class="col-sm-2  col-form-label">Status</label>
-                                    <div class="col-sm-5">
-                                        <select class="form-select" aria-label="Default select example" name="status">
-                                            <option selected>Select Status</option>
-                                            <option value="1">Finish</option>
-                                            <option value="2">Progress</option>
-                                            <option value="3">Queue</option>
-                                            <option value="4">Failed</option>
-                                        </select>
-                                    </div>
-                                </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>id</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Subject</th>
+                                            <th>Message</th>    
+                                            <th>Action</th>    
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>id</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Subject</th>
+                                            <th>Message</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <?php foreach ($contacts as $contact) : ?>
+                                            <tr>
+                                                <td><?= $contact['id']; ?></td>
+                                                <td><?= $contact['name']; ?></td>
+                                                <td><?= $contact['email']; ?></td>
+                                                <td><?= $contact['subject']; ?></td>
+                                                <td><?= $contact['message']; ?></td>
+                                                <td><a class="btn btn-danger" href="<?php echo base_url(); ?>admin/deleteContact/<?= $contact['id'];?>">Delete</a></td>
+                                            </tr>
+                                        <?php endforeach ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                    <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
-                    </form>
+
                 </div>
+                <!-- /.container-fluid -->
+
             </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Multikarya 2022</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
         </div>
-        <!-- /.container-fluid -->
-
-    </div>
-    <!-- End of Main Content -->
-
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Multikarya 2022</span>
-            </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
+        <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
