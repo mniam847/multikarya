@@ -13,4 +13,10 @@ class Admin extends CI_Controller {
         $data['user'] = $this->session->userdata('name');
 		$this->load->view('admin/dashboard', $data);
 	}
+
+    public function logout(){
+        // $this->session->unset_userdata('status');
+        $this->session->sess_destroy();
+        redirect('login');
+    }
 }
