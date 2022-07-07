@@ -75,14 +75,14 @@
                 </a>
             </li>
 
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url(); ?>admin/showinvoice">
                     <i class="fa-solid fa-inbox"></i>
                     <span>Invoice</span>
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="<?php echo base_url(); ?>admin/showrecord">
                     <i class="fa-solid fa-clock-rotate-left"></i>
                     <span>Record</span>
@@ -209,13 +209,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Invoice</h1>
-                    <p class="mb-4">Data yang menampilkan seluruh Invoice yang dimiliki</a>.</p>
+                    <h1 class="h3 mb-2 text-gray-800">Data Record</h1>
+                    <p class="mb-4">Data yang menampilkan seluruh record yang dimiliki</a>.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 grid" style="--bs-columns: 10; --bs-gap: 1rem;">
-                            <h6 class="m-0 font-weight-bold text-primary g-col-6">DataInvoice</h6>
+                            <h6 class="m-0 font-weight-bold text-primary g-col-6">DataRecord</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -230,7 +230,6 @@
                                             <th>Date Line</th>
                                             <th>Status</th>
                                             <th>Price</th>
-                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -243,21 +242,19 @@
                                             <th>Date Line</th>
                                             <th>Status</th>
                                             <th>Price</th>
-                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <?php foreach ($invoice as $invoice) : ?>
+                                        <?php foreach ($record as $record) : ?>
                                             <tr>
-                                                <td><?= $invoice['id']; ?></td>
-                                                <td><?= $invoice['name']; ?></td>
-                                                <td><?= $invoice['product']; ?></td>
-                                                <td><?= $invoice['message']; ?></td>
-                                                <td><?= $invoice['date_input']; ?></td>
-                                                <td><?= $invoice['dateline']; ?></td>
-                                                <td><?= $invoice['status']; ?></td>
-                                                <td><?= $invoice['price']; ?></td>
-                                                <td><a class="btn btn-primary me-2" href="<?php echo base_url(); ?>admin/detailInvoice/<?= $invoice['id']; ?>">Detail</a><a class="btn btn-danger" href="<?php echo base_url(); ?>admin/deleteInvoice/<?= $invoice['id']; ?>">Delete</a></td>
+                                                <td><?= $record['id']; ?></td>
+                                                <td><?= $record['name']; ?></td>
+                                                <td><?= $record['product']; ?></td>
+                                                <td><?= $record['message']; ?></td>
+                                                <td><?= $record['date_input']; ?></td>
+                                                <td><?= $record['dateline']; ?></td>
+                                                <td><?= $record['status']; ?></td>
+                                                <td><?= $record['price']; ?></td>
                                             </tr>
                                         <?php endforeach ?>
 

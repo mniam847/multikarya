@@ -139,4 +139,14 @@ class Admin extends CI_Controller
         $data['user'] = $this->session->userdata('name');
         redirect('admin/showInvoice', 'refresh');
     }
+
+    // ============================================================================================
+    // record
+    public function showRecord()
+    {
+        $data['user'] = $this->session->userdata('name');
+
+        $data['record'] = $this->multikarya->getData("invoice", array('status' => '1'));
+        $this->load->view('adminRecord/index', $data);
+    }
 }
