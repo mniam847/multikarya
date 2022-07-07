@@ -68,14 +68,14 @@
                 </a>
             </li> -->
 
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="<?php echo base_url(); ?>admin/showProduct">
                     <i class="fa-solid fa-database"></i>
                     <span>Product</span>
                 </a>
             </li>
 
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url(); ?>admin/showinvoice">
                     <i class="fa-solid fa-inbox"></i>
                     <span>Invoice</span>
@@ -210,83 +210,88 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Data Invoice</h1>
-                    <p class="mb-4">Data yang menampilkan seluruh Invoice yang dimiliki</a>.</p>
+                    <p class="mb-4">Data yang menampilkan seluruh invoice yang dimiliki</a>.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 grid" style="--bs-columns: 10; --bs-gap: 1rem;">
                             <h6 class="m-0 font-weight-bold text-primary g-col-6">DataInvoice</h6>
                         </div>
-                        <div class="card-body">
-
-                            <a class="mb-3 btn btn-primary" href="<?php echo base_url(); ?>admin/createPageInvoice"> <i class="fa-solid fa-plus"></i> Tambah Invoice</a>
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>id</th>
-                                            <th>Name</th>
-                                            <th>Product</th>
-                                            <th>Message</th>
-                                            <th>Date Input</th>
-                                            <th>Date Line</th>
-                                            <th>Status</th>
-                                            <th>Price</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>id</th>
-                                            <th>Name</th>
-                                            <th>Product</th>
-                                            <th>Message</th>
-                                            <th>Date Input</th>
-                                            <th>Date Line</th>
-                                            <th>Status</th>
-                                            <th>Price</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <?php foreach ($invoice as $invoice) : ?>
-                                            <tr>
-                                                <td><?= $invoice['id']; ?></td>
-                                                <td><?= $invoice['name']; ?></td>
-                                                <td><?= $invoice['product']; ?></td>
-                                                <td><?= $invoice['message']; ?></td>
-                                                <td><?= $invoice['date_input']; ?></td>
-                                                <td><?= $invoice['dateline']; ?></td>
-                                                <td><?= $invoice['status']; ?></td>
-                                                <td><?= $invoice['price']; ?></td>
-                                                <td><a class="btn btn-primary me-2" href="<?php echo base_url(); ?>admin/detailInvoice/<?= $invoice['id']; ?>">Detail</a><a class="btn btn-danger" href="<?php echo base_url(); ?>admin/deleteInvoice/<?= $invoice['id']; ?>">Delete</a></td>
-                                            </tr>
-                                        <?php endforeach ?>
-
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="card-body col-sm-8">
+                            <form action="<?= base_url('admin/createInvoice'); ?>" method="post">
+                                <div class="form-group row">
+                                    <label for="1" class="col-sm-2  col-form-label">Nama Invoice</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="1" name="name" placeholder="Tulis nama produk" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="2" class="col-sm-2  col-form-label">Product</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="2" name="product" placeholder="Tulis kategori produk" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="3" class="col-sm-2  col-form-label">Message</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="3" name="message" placeholder="Masukkan harga produk" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="4" class="col-sm-2  col-form-label">Tanggal Pesanan</label>
+                                    <div class="col-sm-5">
+                                        <input type="date" class="form-control" id="3" name="date_input" placeholder="Masukkan keterangan" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="4" class="col-sm-2  col-form-label">Tanggal Berakhir</label>
+                                    <div class="col-sm-5">
+                                        <input type="date" class="form-control" id="3" name="dateline" placeholder="Masukkan keterangan" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="4" class="col-sm-2  col-form-label">Harga</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="3" name="price" placeholder="Masukkan keterangan" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="4" class="col-sm-2  col-form-label">Status</label>
+                                    <div class="col-sm-5">
+                                        <select class="form-select" aria-label="Default select example" name="status">
+                                            <option selected>Select Status</option>
+                                            <option value="1">Finish</option>
+                                            <option value="2">Progress</option>
+                                            <option value="3">Queue</option>
+                                            <option value="4">Failed</option>
+                                        </select>
+                                    </div>
+                                </div>
                         </div>
                     </div>
-
+                    <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                    </form>
                 </div>
-                <!-- /.container-fluid -->
-
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Multikarya 2022</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Multikarya 2022</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->

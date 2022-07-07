@@ -105,6 +105,28 @@ class Admin extends CI_Controller
         $this->load->view('admininvoice/index', $data);
     }
 
+    public function createPageInvoice()
+    {
+        $data['user'] = $this->session->userdata('name');
+        $this->load->view('admininvoice/createpage', $data);
+    }
+    public function createInvoice()
+    {
+        $data['user'] = $this->session->userdata('name');
+
+        $submit_data = array(
+            'name' => $this->input->post('name'),
+            'product' => $this->input->post('product'),
+            'message' => $this->input->post('message'),
+            'date_input' => $this->input->post('date_input'),
+            'dateline' => $this->input->post('dateline'),
+            'status' => $this->input->post('status'),
+            'price' => $this->input->post('price')
+        );
+        $this->multikarya->inputData("invoice", $submit_data);
+        redirect('admin/showInvoice', 'refresh');
+    }
+
     public function detailInvoice($id)
     {  //sekaligus update
         $data['user'] = $this->session->userdata('name');
