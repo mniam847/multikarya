@@ -31,7 +31,7 @@ class multikarya extends CI_Model
 
     //update data
     public function updateData($tabel, $data, $where){
-        return $$this->db->update($tabel, $data, $where);
+        return $this->db->update($tabel, $data, $where);
     }
 
     //delete data
