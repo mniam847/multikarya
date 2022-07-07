@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2022 at 05:58 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Jul 07, 2022 at 06:32 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -69,15 +70,16 @@ CREATE TABLE `product` (
   `name` varchar(255) NOT NULL,
   `category` varchar(255) NOT NULL,
   `price` int(255) NOT NULL,
-  `picture` varchar(128) NOT NULL
+  `picture` varchar(128) NOT NULL,
+  `describe` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `category`, `price`, `picture`) VALUES
-(1, 'Kamera', 'Aksesoris', 150000, 'cat-4.JPG');
+INSERT INTO `product` (`id`, `name`, `category`, `price`, `picture`, `describe`) VALUES
+(1, 'Kamera', 'Aksesoris', 150000, 'cat-4.JPG', 'Apa aja boleh hjjghjdfjdgjhsvfhj hafbhasbhf ajhfjb ahjvfhjs ahjvfhjsab havbfhj ajhf ahjsfvahjv shfvjah havfhjc ahvcha hjc hjawv cjha hs cha hkc hs ch ahs cka ks cka kjsc kas  cjascjbjnaj cajsc as ckj aks ');
 
 -- --------------------------------------------------------
 
