@@ -24,7 +24,7 @@ class Home extends CI_Controller
         $data['address'] = $tempVar;
         // ------------------------------------------------------------------------------------------------------------
         
-        
+        $data['product'] = $this->multikarya->getAll("product");
         
 
         $this->load->view('shop/index', $data);
