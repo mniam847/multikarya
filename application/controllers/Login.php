@@ -20,8 +20,7 @@ class Login extends CI_Controller
     }
 
     //validasi login
-    public function validate()
-    {
+    public function validate(){
         $user = $this->input->post('username');
         $pass = $this->input->post('password');
 
@@ -39,13 +38,16 @@ class Login extends CI_Controller
                 'name' => $user,
                 'status' => 'login'
             );
-
-
             $this->session->set_userdata($accountSession);
             redirect('admin');
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger text-center">Data salah input, coba lagi!</div>');
             redirect('login');
         }
+    }
+
+    public function logout(){
+        $this->session->unset_userdata('status');
+        redirect('login');
     }
 }
