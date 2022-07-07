@@ -23,6 +23,7 @@
 
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url(); ?>assets/admin/aset/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
@@ -411,6 +412,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="<?php echo base_url(); ?>assets/admin/aset/js/sb-admin-2.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/bootstap/js/botstrap.min.js"></script>
 
     <!-- Page level plugins -->
     <script src="<?php echo base_url(); ?>assets/admin/aset/vendor/chart.js/Chart.min.js"></script>

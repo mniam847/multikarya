@@ -23,6 +23,8 @@
 
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url(); ?>assets/admin/aset/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
 
 </head>
 
@@ -46,7 +48,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url(); ?>admin">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -68,7 +70,7 @@
                 </a>
             </li> -->
 
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="<?php echo base_url(); ?>admin/showProduct">
                     <i class="fa-solid fa-database"></i>
                     <span>Product</span>
@@ -218,17 +220,16 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
+                    <h1 class="h3 mb-2 text-gray-800">Data Product</h1>
+                    <p class="mb-4">Data yang menampilkan sseluruh product yang dimiliki</a>.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        <div class="card-header py-3 grid" style="--bs-columns: 10; --bs-gap: 1rem;">
+                            <h6 class="m-0 font-weight-bold text-primary g-col-6">DataProduct</h6>
                         </div>
                         <div class="card-body">
+                            <a class="mb-3 btn btn-primary" href="<?php echo base_url(); ?>admin/createPageProduct"> <i class="fa-solid fa-plus"></i> Tambah Product</a>
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
@@ -239,6 +240,7 @@
                                             <th>Price</th>
                                             <th>Picture</th>
                                             <th>Describe</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -249,6 +251,7 @@
                                             <th>Price</th>
                                             <th>Picture</th>
                                             <th>Describe</th>
+                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -260,6 +263,7 @@
                                             <td><?= $product['price'];?></td>
                                             <td><img style="height: 50px; width:50px;" src="<?php echo base_url(); ?>assets/shop/img/<?= $product['picture'];?>" alt=""></td>
                                             <td><?= $product['describe'];?></td>
+                                            <td><a class="btn btn-primary me-2" href="<?php echo base_url(); ?>admin/detailProduct/<?= $product['id'];?>">Detail</a><a class="btn btn-danger" href="<?php echo base_url(); ?>admin/deleteProduct/<?= $product['id'];?>">Delete</a></td>
                                         </tr>
                                         <?php endforeach ?>
                                         
@@ -325,6 +329,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="<?php echo base_url(); ?>assets/admin/aset/js/sb-admin-2.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/bootstap/js/botstrap.min.js"></script>
 
     <!-- Page level plugins -->
     <script src="<?php echo base_url(); ?>assets/admin/aset/vendor/chart.js/Chart.min.js"></script>

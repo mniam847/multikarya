@@ -35,7 +35,7 @@ class Admin extends CI_Controller {
         $data['user'] = $this->session->userdata('name');
 		$this->load->view('adminproduct/createpage', $data);
 	}
-    public function createProduct(){
+    public function createProduct($id){
         $data['user'] = $this->session->userdata('name');
         redirect('adminproduct/showProduct');
     }
