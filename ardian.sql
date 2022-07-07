@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2022 at 06:32 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Jul 07, 2022 at 11:46 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -55,9 +54,19 @@ INSERT INTO `about` (`id`, `name`, `value`, `description`) VALUES
 CREATE TABLE `invoice` (
   `id` int(191) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `product` int(191) NOT NULL,
   `message` text NOT NULL,
-  `star` int(191) NOT NULL
+  `status` int(191) NOT NULL,
+  `price` int(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `invoice`
+--
+
+INSERT INTO `invoice` (`id`, `name`, `product`, `message`, `status`, `price`) VALUES
+(1, 'customer 1', 1, 'cepat dikirim', 0, 150000),
+(2, 'customer 2', 1, 'packing rapi', 0, 150000);
 
 -- --------------------------------------------------------
 
@@ -80,6 +89,27 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`id`, `name`, `category`, `price`, `picture`, `describe`) VALUES
 (1, 'Kamera', 'Aksesoris', 150000, 'cat-4.JPG', 'Apa aja boleh hjjghjdfjdgjhsvfhj hafbhasbhf ajhfjb ahjvfhjs ahjvfhjsab havbfhj ajhf ahjsfvahjv shfvjah havfhjc ahvcha hjc hjawv cjha hs cha hkc hs ch ahs cka ks cka kjsc kas  cjascjbjnaj cajsc as ckj aks ');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testimoni`
+--
+
+CREATE TABLE `testimoni` (
+  `id` int(191) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `no_invoice` varchar(191) NOT NULL,
+  `star` int(191) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `testimoni`
+--
+
+INSERT INTO `testimoni` (`id`, `name`, `message`, `no_invoice`, `star`) VALUES
+(1, 'customer 1', 'baik sekali', '0001', 5);
 
 -- --------------------------------------------------------
 
@@ -124,6 +154,12 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `testimoni`
+--
+ALTER TABLE `testimoni`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -143,13 +179,19 @@ ALTER TABLE `about`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `testimoni`
+--
+ALTER TABLE `testimoni`
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`

@@ -12,6 +12,11 @@ class Admin extends CI_Controller {
     // index
     public function index(){
         $data['user'] = $this->session->userdata('name');
+        $data['totalproduct'] = count($this->multikarya->getAll("product"));
+        $data['totalinvoice'] = count($this->multikarya->getAll("invoice"));
+        $tempVar = $this->multikarya->getData("invoice",array('status'=>1));
+        $data['totalrecord'] = count($tempVar);
+        $data['totalfeedback'] = count($this->multikarya->getAll("testimoni"));
 		$this->load->view('admin/dashboard', $data);
 	}
 
