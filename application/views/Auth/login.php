@@ -9,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="icon" type="image/png" href="<?= base_url()?>assets/logo/logo.png">
     <title>Multi Karya - Login</title>
+    <link rel="icon" type="image/png" href="<?= base_url()?>assets/logo/logo.png">
 
     
     <!-- Custom fonts for this template-->
