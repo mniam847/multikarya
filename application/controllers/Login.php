@@ -39,7 +39,7 @@ class Login extends CI_Controller
             $this->session->set_userdata($accountSession);
             redirect('admin');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger text-center">Data salah input, coba lagi!</div>');
+            $this->session->set_flashdata('message', 'Data salah input, coba lagi!');
             redirect('login');
         }
     }

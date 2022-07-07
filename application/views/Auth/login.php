@@ -34,7 +34,7 @@
             <img src="<?php echo base_url(); ?>assets/logo/logo.png" alt="">
         </div>
         <div class="alert alert-success" role="alert">
-            <?php echo $this->session->flashdata('message'); ?>
+            <p style="color: red;"><?php echo $this->session->flashdata('message'); ?></p>
         </div>
         <div class="row">
             <div class="text-center col-lg-12 mt-4 name">
@@ -52,9 +52,9 @@
             </div>
             <button class="btn mt-3">Login</button>
         </form>
-        <div class="text-center fs-6">
+        <!-- <div class="text-center fs-6">
             <a href="#">Forget password?</a>
-        </div>
+        </div> -->
     </div>
 
     </div>
