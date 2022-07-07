@@ -228,48 +228,35 @@
                         <div class="card-header py-3 grid" style="--bs-columns: 10; --bs-gap: 1rem;">
                             <h6 class="m-0 font-weight-bold text-primary g-col-6">DataProduct</h6>
                         </div>
-                        <div class="card-body">
-                            <a class="mb-3 btn btn-primary" href="<?php echo base_url(); ?>admin/createPageProduct"> <i class="fa-solid fa-plus"></i> Tambah Product</a>
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>id</th>
-                                            <th>Name</th>
-                                            <th>Category</th>
-                                            <th>Price</th>
-                                            <th>Picture</th>
-                                            <th>Describe</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>id</th>
-                                            <th>Name</th>
-                                            <th>Category</th>
-                                            <th>Price</th>
-                                            <th>Picture</th>
-                                            <th>Describe</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <?php foreach($products as $product):?>
-                                        <tr>
-                                            <td><?= $product['id'];?></td>
-                                            <td><?= $product['name'];?></td>
-                                            <td><?= $product['category'];?></td>
-                                            <td><?= $product['price'];?></td>
-                                            <td><img style="height: 50px; width:50px;" src="<?php echo base_url(); ?>uploads/<?= $product['picture'];?>" alt=""></td>
-                                            <td><?= $product['describe'];?></td>
-                                            <td><a class="btn btn-primary me-2" href="<?php echo base_url(); ?>admin/detailProduct/<?= $product['id'];?>">Detail</a><a class="btn btn-danger" href="<?php echo base_url(); ?>admin/deleteProduct/<?= $product['id'];?>">Delete</a></td>
-                                        </tr>
-                                        <?php endforeach ?>
-                                        
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="card-body col-sm-8">
+                            <form action="<?= base_url('admin/createProduct'); ?>" method="post">
+                                <div class="form-group row">
+                                    <label for="1" class="col-sm-2  col-form-label">Nama Product</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="1" name="name" placeholder="Tulis nama produk" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="2" class="col-sm-2  col-form-label">Kategory Product</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="2" name="category" placeholder="Tulis kategori produk" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="3" class="col-sm-2  col-form-label">Harga Product</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="3" name="price" placeholder="Masukkan harga produk" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="4" class="col-sm-2  col-form-label">Keterangan Product</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="3" name="describe" placeholder="Masukkan keterangan" autocomplete="off">
+                                    </div>
+                                </div>
+                                <a href="<?= base_url('admin/showProduct'); ?>" class="btn btn-danger">Batal</a>
+                                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                            </form>
                         </div>
                     </div>
 

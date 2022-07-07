@@ -212,7 +212,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                     <div class="card product-item border-0 mb-4">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="<?= base_url("uploads/" . $product['picture']) ?>" alt="">
+                            <img style="height:250px ;width:250px;" class="img-fluid w-100" src="<?= base_url("uploads/" . $product['picture']) ?>" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                             <h6 class="text-truncate mb-3"><?= $product['name'] ?></h6>

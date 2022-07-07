@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2022 at 12:53 PM
+-- Generation Time: Jul 07, 2022 at 02:48 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -56,6 +56,8 @@ CREATE TABLE `invoice` (
   `name` varchar(255) NOT NULL,
   `product` int(191) NOT NULL,
   `message` text NOT NULL,
+  `date_input` varchar(191) NOT NULL,
+  `dateline` varchar(255) NOT NULL,
   `status` int(191) NOT NULL,
   `price` int(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -64,9 +66,9 @@ CREATE TABLE `invoice` (
 -- Dumping data for table `invoice`
 --
 
-INSERT INTO `invoice` (`id`, `name`, `product`, `message`, `status`, `price`) VALUES
-(1, 'customer 1', 1, 'cepat dikirim', 1, 150000),
-(2, 'customer 2', 1, 'packing rapi', 0, 150000);
+INSERT INTO `invoice` (`id`, `name`, `product`, `message`, `date_input`, `dateline`, `status`, `price`) VALUES
+(1, 'customer 1', 1, 'cepat dikirim', '', '', 1, 150000),
+(2, 'customer 2', 1, 'packing rapi', '', '', 0, 150000);
 
 -- --------------------------------------------------------
 
@@ -88,7 +90,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `category`, `price`, `picture`, `describe`) VALUES
-(1, 'Kamera', 'Aksesoris', 150000, 'cat-4.JPG', 'Apa aja boleh');
+(1, 'Kamera', 'Aksesoris', 150000, 'cat-4.JPG', 'Apa aja boleh'),
+(2, 'Paper', 'ATK', 12000, 'default.jpg', 'Paper A4');
 
 -- --------------------------------------------------------
 
@@ -185,7 +188,7 @@ ALTER TABLE `invoice`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `testimoni`

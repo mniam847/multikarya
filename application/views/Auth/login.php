@@ -31,7 +31,9 @@
         <!-- Outer Row -->
         <div class="wrapper">
         <div class="logo">
-            <img src="<?php echo base_url(); ?>assets/logo/logo.png" alt="">
+            <a href="<?php echo base_url(); ?>">
+                <img src="<?php echo base_url(); ?>assets/logo/logo.png" alt="">
+            </a>
         </div>
         <div class="alert alert-success" role="alert">
             <p style="color: red;"><?php echo $this->session->flashdata('message'); ?></p>

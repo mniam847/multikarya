@@ -25,7 +25,7 @@ class multikarya extends CI_Model
     }
 
     //inputdata
-    public function inputData($things, $database){
+    public function inputData($database, $things){
         return $this->db->insert($database, $things);
     }
 
@@ -35,7 +35,7 @@ class multikarya extends CI_Model
     }
 
     //delete data
-    public function Delete($table, $where){
+    public function deleteData($table, $where){
         return $this->db->delete($table, $where);
     }    
 }

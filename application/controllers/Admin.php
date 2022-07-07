@@ -35,9 +35,16 @@ class Admin extends CI_Controller {
         $data['user'] = $this->session->userdata('name');
 		$this->load->view('adminproduct/createpage', $data);
 	}
-    public function createProduct($id){
+    public function createProduct(){
         $data['user'] = $this->session->userdata('name');
-        redirect('adminproduct/showProduct');
+
+        $submit_data = array(	'name' => $this->input->post('name'),
+                                'category' => $this->input->post('category'),
+                                'price' => $this->input->post('price'),
+								'describe' => $this->input->post('describe'),
+								'picture' => "default.jpg");
+        $this->multikarya->inputData("product",$submit_data);
+        redirect('admin/showProduct', 'refresh');
     }
     public function showProduct(){
         $data['user'] = $this->session->userdata('name');
@@ -45,13 +52,15 @@ class Admin extends CI_Controller {
         $data['products'] = $this->multikarya->getAll("product");
 		$this->load->view('adminproduct/index', $data);
 	}
-    public function detailProduct(){  //sekaligus update
+    public function detailProduct($id){  //sekaligus update
         $data['user'] = $this->session->userdata('name');
 		$this->load->view('adminproduct/detail', $data);
 	}
-    public function deleteProduct(){
+    public function deleteProduct($id){
+        $submit_data = array( 'id' => $id);
+        $this->multikarya->deleteData("product",$submit_data);
         $data['user'] = $this->session->userdata('name');
-		redirect('adminproduct/showProduct');
+		redirect('admin/showProduct', 'refresh');
 	}
 
 }
