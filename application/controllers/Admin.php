@@ -69,7 +69,7 @@ class Admin extends CI_Controller {
                                 'describe' => $this->input->post('describe'),
                                 'picture' => $this->input->post('picture'),);
         $index = array( 'id'=> $this->input->post('id')); 
-        // var_dump($index);
+        // var_dump($submit_data);
         $this->multikarya->updateData("product", $submit_data, $index);
         redirect('admin/showProduct', 'refresh');
     }

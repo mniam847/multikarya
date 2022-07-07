@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2022 at 02:48 PM
+-- Generation Time: Jul 07, 2022 at 03:54 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -91,7 +91,7 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`id`, `name`, `category`, `price`, `picture`, `describe`) VALUES
 (1, 'Kamera', 'Aksesoris', 150000, 'cat-4.JPG', 'Apa aja boleh'),
-(2, 'Paper', 'ATK', 12000, 'default.jpg', 'Paper A4');
+(2, 'Paper A4', 'ATK', 15000, 'default.jpg', 'Paper A4 1/4 pack');
 
 -- --------------------------------------------------------
 
@@ -188,7 +188,7 @@ ALTER TABLE `invoice`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `testimoni`

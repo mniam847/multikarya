@@ -230,47 +230,49 @@
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-8">
                                 <form action="<?= base_url('admin/updateProduct'); ?>" method="post">
-                                    <div class="form-group row">
-                                        <label for="0" class="col-sm-2  col-form-label">Nama Product</label>
-                                        <div class="col-sm-5">
-                                            <input type="text" value="<?= $product[0]['id']; ?>" class="form-control" id="0" name="id" placeholder="Tulis nama produk" readonly>
+                                    <div class="row">
+                                    <div class="col-8">
+                                        <div class="form-group row">
+                                            <label for="0" class="col-sm-2  col-form-label">Nama Product</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" value="<?= $product[0]['id']; ?>" class="form-control" id="0" name="id" placeholder="Tulis nama produk" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="1" class="col-sm-2  col-form-label">Nama Product</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" value="<?= $product[0]['name']; ?>" class="form-control" id="1" name="name" placeholder="Tulis nama produk" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="2" class="col-sm-2  col-form-label">Kategory Product</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" value="<?= $product[0]['category']; ?>" class="form-control" id="2" name="category" placeholder="Tulis kategori produk" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="3" class="col-sm-2  col-form-label">Harga Product</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" value="<?= $product[0]['price']; ?>" class="form-control" id="3" name="price" placeholder="Masukkan harga produk" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="4" class="col-sm-2  col-form-label">Keterangan Product</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" value="<?= $product[0]['describe']; ?>" class="form-control" id="3" name="describe" placeholder="Masukkan keterangan" autocomplete="off">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="1" class="col-sm-2  col-form-label">Nama Product</label>
-                                        <div class="col-sm-5">
-                                            <input type="text" value="<?= $product[0]['name']; ?>" class="form-control" id="1" name="name" placeholder="Tulis nama produk" autocomplete="off">
-                                        </div>
+                                    <div class="col-4">
+                                        <input value="<?= $product[0]['picture']; ?>" name="picture" type="hidden" alt="">
+                                        <img style="hight:250px;width:250px;" src="<?= base_url(); ?>uploads/<?= $product[0]['picture']; ?>" alt="">
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="2" class="col-sm-2  col-form-label">Kategory Product</label>
-                                        <div class="col-sm-5">
-                                            <input type="text" value="<?= $product[0]['category']; ?>" class="form-control" id="2" name="category" placeholder="Tulis kategori produk" autocomplete="off">
-                                        </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="3" class="col-sm-2  col-form-label">Harga Product</label>
-                                        <div class="col-sm-5">
-                                            <input type="text" value="<?= $product[0]['price']; ?>" class="form-control" id="3" name="price" placeholder="Masukkan harga produk" autocomplete="off">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="4" class="col-sm-2  col-form-label">Keterangan Product</label>
-                                        <div class="col-sm-5">
-                                            <input type="text" value="<?= $product[0]['describe']; ?>" class="form-control" id="3" name="describe" placeholder="Masukkan keterangan" autocomplete="off">
-                                        </div>
-                                    </div>
-                                    <a href="<?= base_url('admin/showProduct'); ?>" class="btn btn-info">Batal</a>
-                                    <a href="<?= base_url('admin/deleteProduct'); ?>" class="btn btn-danger">delete</a>
-                                    <button type="submit" name="submit" class="btn btn-primary">Update</button>
+                                        <a href="<?= base_url('admin/showProduct'); ?>" class="btn btn-info">Batal</a>
+                                        <a href="<?= base_url('admin/deleteProduct'); ?>" class="btn btn-danger">delete</a>
+                                        <button type="submit" name="submit" class="btn btn-primary">Update</button>
                                 </form>
-                                </div>
-                                <div class="col-4">
-                                    gambar
-                                    <input type="image" src="<?= $product[0]['picture']; ?>" alt=""><img style="hight:250px;width:250px;" src="<?= base_url(); ?>uploads/<?= $product[0]['picture']; ?>" alt="">
-                                </div>
                             </div>
                         </div>
                     </div>
