@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2022 at 11:46 AM
+-- Generation Time: Jul 07, 2022 at 12:53 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -65,7 +65,7 @@ CREATE TABLE `invoice` (
 --
 
 INSERT INTO `invoice` (`id`, `name`, `product`, `message`, `status`, `price`) VALUES
-(1, 'customer 1', 1, 'cepat dikirim', 0, 150000),
+(1, 'customer 1', 1, 'cepat dikirim', 1, 150000),
 (2, 'customer 2', 1, 'packing rapi', 0, 150000);
 
 -- --------------------------------------------------------
@@ -88,7 +88,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `category`, `price`, `picture`, `describe`) VALUES
-(1, 'Kamera', 'Aksesoris', 150000, 'cat-4.JPG', 'Apa aja boleh hjjghjdfjdgjhsvfhj hafbhasbhf ajhfjb ahjvfhjs ahjvfhjsab havbfhj ajhf ahjsfvahjv shfvjah havfhjc ahvcha hjc hjawv cjha hs cha hkc hs ch ahs cka ks cka kjsc kas  cjascjbjnaj cajsc as ckj aks ');
+(1, 'Kamera', 'Aksesoris', 150000, 'cat-4.JPG', 'Apa aja boleh');
 
 -- --------------------------------------------------------
 

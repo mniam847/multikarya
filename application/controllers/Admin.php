@@ -15,8 +15,11 @@ class Admin extends CI_Controller {
         $data['totalproduct'] = count($this->multikarya->getAll("product"));
         $data['totalinvoice'] = count($this->multikarya->getAll("invoice"));
         $tempVar = $this->multikarya->getData("invoice",array('status'=>1));
+        $data['percentinvoice'] = (count($tempVar)*100)/ count($this->multikarya->getAll("invoice"));
         $data['totalrecord'] = count($tempVar);
         $data['totalfeedback'] = count($this->multikarya->getAll("testimoni"));
+        $data['percentfeedback'] = (count($this->multikarya->getAll("testimoni"))*100)/count($tempVar);
+
 		$this->load->view('admin/dashboard', $data);
 	}
 
@@ -38,6 +41,8 @@ class Admin extends CI_Controller {
     }
     public function showProduct(){
         $data['user'] = $this->session->userdata('name');
+
+        $data['products'] = $this->multikarya->getAll("product");
 		$this->load->view('adminproduct/index', $data);
 	}
     public function detailProduct(){  //sekaligus update
