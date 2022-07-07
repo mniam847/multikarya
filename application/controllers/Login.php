@@ -8,8 +8,6 @@ class Login extends CI_Controller
     {
         parent::__construct();
         if ($this->session->userdata('status') == "login") {
-            $tempVar = $this->multikarya->getData("user", array('name' => $this->session->userdata('name')));
-            $tempVar = $tempVar[0]["role"];
             redirect('admin');
         }
     }
