@@ -8,6 +8,10 @@ class Product extends CI_Controller
     {
         // template
         // ------------------------------------------------------------------------------------------------------------
+        $tempVar = $this->multikarya->getData("about", array('name' => 'company'));
+        $tempVar = $tempVar[0]["value"];
+        $data['company'] = $tempVar;
+
         $tempVar = $this->multikarya->getData("about", array('name' => 'cs'));
         $tempVar = $tempVar[0]["value"];
         $data['cs'] = $tempVar;
@@ -36,6 +40,10 @@ class Product extends CI_Controller
     {
         // template
         // ------------------------------------------------------------------------------------------------------------
+        $tempVar = $this->multikarya->getData("about", array('name' => 'company'));
+        $tempVar = $tempVar[0]["value"];
+        $data['company'] = $tempVar;
+
         $tempVar = $this->multikarya->getData("about", array('name' => 'cs'));
         $tempVar = $tempVar[0]["value"];
         $data['cs'] = $tempVar;
