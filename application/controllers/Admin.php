@@ -33,7 +33,12 @@ class Admin extends CI_Controller
         $data['percentinvoice'] = number_format((count($tempVar) * 100) / count($this->multikarya->getAll("invoice")), 2);
         $data['totalrecord'] = count($tempVar);
         $data['totalfeedback'] = count($this->multikarya->getAll("testimoni"));
-        $data['percentfeedback'] = number_format((count($this->multikarya->getAll("testimoni")) * 100) / count($tempVar), 2);
+        $totalstar = 0;
+        foreach($this->multikarya->getAll("testimoni") as $star){
+            $totalstar+=$star['star'];
+        }
+        $totalstar /= count($this->multikarya->getAll("testimoni"));
+        $data['percentfeedback'] = $totalstar;
 
         $this->load->view('admin/dashboard', $data);
     }

@@ -8,6 +8,11 @@ class Home extends CI_Controller
     {
         // template
         // ------------------------------------------------------------------------------------------------------------
+        
+        $tempVar = $this->multikarya->getData("about", array('name' => 'cs'));
+        $tempVar = $tempVar[0]["value"];
+        $data['cs'] = $tempVar;
+        
         $tempVar = $this->multikarya->getData("about", array('name' => 'foreword'));
         $tempVar = $tempVar[0]["value"];
         $data['foreword'] = $tempVar;

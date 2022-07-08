@@ -6,6 +6,10 @@ class Contact extends CI_Controller
     public function index(){
         // template
         // ------------------------------------------------------------------------------------------------------------
+        $tempVar = $this->multikarya->getData("about", array('name' => 'company'));
+        $tempVar = $tempVar[0]["value"];
+        $data['company'] = $tempVar;
+
         $tempVar = $this->multikarya->getData("about", array('name' => 'foreword'));
         $tempVar = $tempVar[0]["value"];
         $data['foreword'] = $tempVar;

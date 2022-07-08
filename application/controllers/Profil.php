@@ -8,6 +8,14 @@ class Profil extends CI_Controller
     {
         // template
         // ------------------------------------------------------------------------------------------------------------
+        $tempVar = $this->multikarya->getData("about", array('name' => 'company'));
+        $tempVar = $tempVar[0]["value"];
+        $data['company'] = $tempVar;
+
+        $tempVar = $this->multikarya->getData("about", array('name' => 'vm'));
+        $tempVar = $tempVar[0]["value"];
+        $data['vm'] = $tempVar;
+
         $tempVar = $this->multikarya->getData("about", array('name' => 'foreword'));
         $tempVar = $tempVar[0]["value"];
         $data['foreword'] = $tempVar;
@@ -26,6 +34,12 @@ class Profil extends CI_Controller
         // ------------------------------------------------------------------------------------------------------------
 
         $data['testimoni'] = $this->multikarya->getFew('testimoni', 'DESC', 3);
+        $totalstar = 0;
+        foreach($this->multikarya->getAll("testimoni") as $star){
+            $totalstar+=$star['star'];
+        }
+        $totalstar /= count($this->multikarya->getAll("testimoni"));
+        $data['percentfeedback'] = $totalstar;
 
         $this->load->view('shop/about', $data);
     }
