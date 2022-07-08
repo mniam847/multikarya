@@ -136,7 +136,7 @@
                                 </div>
                                 <div class="card-footer d-flex justify-content-between bg-light border">
                                     <a href="<?= base_url("product/detail/" . $product['id']) ?>" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                    <a href="https://api.whatsapp.com/send?phone=6282242008029&text=Halo,%20saya%20ingin melakukan%20pesanan%20untuk%20barang%20<?= $product['name'] ?>" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                                 </div>
                             </div>
                         </div>
