@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2022 at 05:03 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Jul 08, 2022 at 06:19 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -44,7 +43,9 @@ INSERT INTO `about` (`id`, `name`, `value`, `description`) VALUES
 (2, 'address', 'jalanin aja dulu', 'Alamat Perusahaan'),
 (3, 'telp', '024', 'Telepon official perusahaan'),
 (4, 'email', 'multikarya@gmail.com', 'Email Perusahaan'),
-(5, 'foreword', 'Multi Karya adalah bidang usaha jasa yang berjalan pada usaha percetakan, layanan kami meliputi pembuatan iklan melalui baligo, spanduk, stiker, banner, dan lain-lain.', 'Kata pengantar');
+(5, 'foreword', 'Multi Karya adalah bidang usaha jasa yang berjalan pada usaha percetakan, layanan kami meliputi pembuatan iklan melalui baligo, spanduk, stiker, banner, dan lain-lain.', 'Kata pengantar'),
+(6, 'cs', '6282223960591', 'nomer cs order'),
+(7, 'vm', 'Melayani percetakan segala platfoem dengan fast respon dan selalu akti 24 jam demi kenyamanan usaha anda', 'visi misi');
 
 -- --------------------------------------------------------
 
@@ -114,11 +115,11 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`id`, `name`, `category`, `price`, `picture`, `describe`) VALUES
 (1, 'Kamera', 'Aksesoris', 150000, 'cat-4.JPG', 'Apa aja boleh'),
-(2, 'customer 2', '', 150000, '', ''),
 (5, 'sepatu', 'shoes', 56787, 'cat-62.jpg', 'Sepatu keren'),
 (6, 'baju', 'dress', 50000, 'cat-11.jpg', 'bhjbdjb'),
 (7, 'baju wanita', 'dress', 70000, 'cat-21.jpg', 'fhjdahkdb'),
-(8, 'baju anak', 'dress', 5789000, 'cat-3.jpg', 'gwgdwb');
+(8, 'baju anak', 'dress', 5789000, 'cat-3.jpg', 'gwgdwb'),
+(9, 'sesuatu', 'sesuatu', 20000, 'cat-63.jpg', 'sesuatu');
 
 -- --------------------------------------------------------
 
@@ -210,7 +211,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `about`
 --
 ALTER TABLE `about`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -228,7 +229,7 @@ ALTER TABLE `invoice`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `testimoni`
