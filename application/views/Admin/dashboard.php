@@ -319,19 +319,12 @@
                                         <div class="progress-bar" role="progressbar" style="width: <?= $percentinvoice; ?>%"
                                             aria-valuenow="<?= $percentinvoice; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <h4 class="small font-weight-bold">Total Feedback <span
-                                            class="float-right"><?= $percentfeedback ?>%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: <?= $percentfeedback ?>%"
-                                            aria-valuenow="<?= $percentfeedback ?>" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
                                     <h4 class="small font-weight-bold">Star review <span
-                                            class="float-right">/5</span></h4>
+                                            class="float-right"><?= $percentfeedback ?>/5</span></h4>
                                     <div class="progress mb-4">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 60%"
-                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: <?= $percentfeedback*20; ?>%"
+                                            aria-valuenow="<?= $percentfeedback*20; ?>%" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    
                                 </div>
                             </div>
 
