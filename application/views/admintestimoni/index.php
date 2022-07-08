@@ -222,7 +222,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
+                                            <th>No</th>
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Message</th>
@@ -232,7 +232,7 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>id</th>
+                                            <th>No</th>
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Message</th>
@@ -241,9 +241,9 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <?php foreach ($testimonis as $testimoni) : ?>
+                                        <?php $no=1; foreach ($testimonis as $testimoni) : ?>
                                             <tr>
-                                                <td><?= $testimoni['id']; ?></td>
+                                                <td><?= $no;?></td><?php $no++;?>
                                                 <td><?= $testimoni['name']; ?></td>
                                                 <td><?= $testimoni['email']; ?></td>
                                                 <td><?= $testimoni['message']; ?></td>

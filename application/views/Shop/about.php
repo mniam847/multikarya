@@ -137,7 +137,7 @@
                         </div>
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="tab-pane-1">
-                                <h4 class="mb-3">Visi dan Misi</h4>
+                                <h4 class="mb-3">Latar Belakang</h4>
                                 <p><?= $vm ?></p>
                             </div>
                             <div class="tab-pane fade" id="tab-pane-2">

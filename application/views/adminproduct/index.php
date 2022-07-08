@@ -234,7 +234,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
+                                            <th>No</th>
                                             <th>Name</th>
                                             <th>Category</th>
                                             <th>Price</th>
@@ -245,7 +245,7 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>id</th>
+                                            <th>No</th>
                                             <th>Name</th>
                                             <th>Category</th>
                                             <th>Price</th>
@@ -255,9 +255,9 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <?php foreach($products as $product):?>
+                                        <?php $no=1; foreach($products as $product):?>
                                         <tr>
-                                            <td><?= $product['id'];?></td>
+                                            <td><?= $no;?></td><?php $no++;?>
                                             <td><?= $product['name'];?></td>
                                             <td><?= $product['category'];?></td>
                                             <td><?= $product['price'];?></td>

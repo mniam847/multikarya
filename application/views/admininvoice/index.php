@@ -224,7 +224,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
+                                            <th>No</th>
                                             <th>Name</th>
                                             <th>Product</th>
                                             <th>Message</th>
@@ -237,7 +237,7 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>id</th>
+                                            <th>No</th>
                                             <th>Name</th>
                                             <th>Product</th>
                                             <th>Message</th>
@@ -249,15 +249,26 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <?php foreach ($invoice as $invoice) : ?>
+                                        <?php $no=1; foreach ($invoice as $invoice) : ?>
                                             <tr>
-                                                <td><?= $invoice['id']; ?></td>
+                                                <td><?= $no;?></td><?php $no++;?>
                                                 <td><?= $invoice['name']; ?></td>
                                                 <td><?= $invoice['product']; ?></td>
                                                 <td><?= $invoice['message']; ?></td>
                                                 <td><?= $invoice['date_input']; ?></td>
                                                 <td><?= $invoice['dateline']; ?></td>
-                                                <td><?= $invoice['status']; ?></td>
+                                                <?php if($invoice['status']==1){
+                                                    $status="Finish";
+                                                    }elseif($invoice['status']==2){
+                                                        $status="progress";
+                                                    }elseif($invoice['status']==3){
+                                                        $status="Queue";
+                                                    }elseif ($invoice['status']==4) {
+                                                        $status="Failed";
+                                                    }else{
+                                                        $status="Error, Please Update";
+                                                    }?>
+                                                <td><?= $status; ?></td>
                                                 <td><?= $invoice['price']; ?></td>
                                                 <td><a class="btn btn-primary me-2" href="<?php echo base_url(); ?>admin/detailInvoice/<?= $invoice['id']; ?>">Detail</a><a class="btn btn-danger" href="<?php echo base_url(); ?>admin/deleteInvoice/<?= $invoice['id']; ?>">Delete</a></td>
                                             </tr>

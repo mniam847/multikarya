@@ -225,17 +225,17 @@
                                             <div class="form-group row">
                                                 <label for="0" class="col-sm-2  col-form-label">Id Invoice</label>
                                                 <div class="col-sm-5">
-                                                    <input type="text" value="<?= $invoice[0]['id']; ?>" class="form-control" id="0" name="id" placeholder="Tulis nama produk" readonly>
+                                                    <input type="text" value="<?= $invoice[0]['id']; ?>" class="form-control" id="0" name="id" placeholder="Tulis nama pelanggan dan produk" readonly>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="1" class="col-sm-2  col-form-label">Nama Invoice</label>
                                                 <div class="col-sm-5">
-                                                    <input type="text" value="<?= $invoice[0]['name']; ?>" class="form-control" id="1" name="name" placeholder="Tulis nama produk" autocomplete="off">
+                                                    <input type="text" value="<?= $invoice[0]['name']; ?>" class="form-control" id="1" name="name" placeholder="Tulis Jumlah produk" autocomplete="off">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="2" class="col-sm-2  col-form-label">Product</label>
+                                                <label for="2" class="col-sm-2  col-form-label">Jumlah Product</label>
                                                 <div class="col-sm-5">
                                                     <input type="text" value="<?= $invoice[0]['product']; ?>" class="form-control" id="2" name="product" placeholder="Tulis kategori produk" autocomplete="off">
                                                 </div>

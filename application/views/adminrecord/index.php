@@ -222,7 +222,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
+                                            <th>No</th>
                                             <th>Name</th>
                                             <th>Product</th>
                                             <th>Message</th>
@@ -234,7 +234,7 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>id</th>
+                                            <th>No</th>
                                             <th>Name</th>
                                             <th>Product</th>
                                             <th>Message</th>
@@ -245,9 +245,9 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <?php foreach ($record as $record) : ?>
+                                        <?php $no=1; foreach ($record as $record) : ?>
                                             <tr>
-                                                <td><?= $record['id']; ?></td>
+                                                <td><?= $no;?></td><?php $no++;?>
                                                 <td><?= $record['name']; ?></td>
                                                 <td><?= $record['product']; ?></td>
                                                 <td><?= $record['message']; ?></td>

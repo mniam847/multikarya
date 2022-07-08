@@ -222,13 +222,13 @@
                                 <div class="form-group row">
                                     <label for="1" class="col-sm-2  col-form-label">Nama Invoice</label>
                                     <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="1" name="name" placeholder="Tulis nama produk" autocomplete="off">
+                                        <input type="text" class="form-control" id="1" name="name" placeholder="Tulis nama pelanggan dan produk" autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="2" class="col-sm-2  col-form-label">Product</label>
+                                    <label for="2" class="col-sm-2  col-form-label">Jumlah Product</label>
                                     <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="2" name="product" placeholder="Tulis kategori produk" autocomplete="off">
+                                        <input type="text" class="form-control" id="2" name="product" placeholder="Tulis jumlah produk" autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="form-group row">
