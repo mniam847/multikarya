@@ -33,12 +33,7 @@ class Admin extends CI_Controller
         $data['percentinvoice'] = number_format((count($tempVar) * 100) / count($this->multikarya->getAll("invoice")), 2);
         $data['totalrecord'] = count($tempVar);
         $data['totalfeedback'] = count($this->multikarya->getAll("testimoni"));
-        $totalstar = 0;
-        foreach($this->multikarya->getAll("testimoni") as $star){
-            $totalstar+=$star['star'];
-        }
-        $totalstar /= $data['totalfeedback'];
-        $data['percentfeedback'] = $totalstar;
+        $data['percentfeedback'] = number_format((count($this->multikarya->getAll("testimoni")) * 100) / count($tempVar), 2);
 
         $this->load->view('admin/dashboard', $data);
     }
@@ -61,30 +56,27 @@ class Admin extends CI_Controller
     {
         $data['user'] = $this->session->userdata('name');
 
-        //load uploading file library
-        $config['upload_path'] = './uploads/';
-        // $config['allowed_types'] = 'jpg|png|jpeg|JPG|PNG|JPEG';
-        // $config['max_size']    = '1000'; //KB
-        // $config['max_width']  = '2000'; //pixels
-        // $config['max_height']  = '2000'; //pixels
+        $config['upload_path']          = './uploads/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['max_size']             = 100;
+        $config['max_width']            = 1024;
+        $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
 
-        if (!$this->upload->do_upload()) {
-            //file gagal diupload -> kembali ke form tambah
-            $this->load->view('adminproduct/createpage', $data);
+        if (!$this->upload->do_upload('picture')) {
+            $error = array('error' => $this->upload->display_errors());
+
+            $this->load->view('upload_form', $error);
         } else {
-            //file berhasil diupload -> lanjutkan ke query INSERT
-            // eksekusi query INSERT
-            $picture = $this->upload->data();
-            $submit_data = array(
+            $data = array(
                 'name' => $this->input->post('name'),
                 'category' => $this->input->post('category'),
                 'price' => $this->input->post('price'),
                 'describe' => $this->input->post('describe'),
-                'picture'            => $picture['picture']
+                'picture' => $this->upload->data('file_name')
             );
-            $this->multikarya->inputData("product", $submit_data);
+            $this->multikarya->inputData("product", $data);
             redirect('admin/showProduct', 'refresh');
         }
     }
@@ -108,17 +100,31 @@ class Admin extends CI_Controller
     {
         $data['user'] = $this->session->userdata('name');
 
-        $submit_data = array(
-            'name' => $this->input->post('name'),
-            'category' => $this->input->post('category'),
-            'price' => $this->input->post('price'),
-            'describe' => $this->input->post('describe'),
-            'picture' => $this->input->post('picture'),
-        );
-        $index = array('id' => $this->input->post('id'));
-        // var_dump($submit_data);
-        $this->multikarya->updateData("product", $submit_data, $index);
-        redirect('admin/showProduct', 'refresh');
+
+        $config['upload_path']          = './uploads/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['max_size']             = 100;
+        $config['max_width']            = 1024;
+        $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('picture')) {
+            $error = array('error' => $this->upload->display_errors());
+
+            $this->load->view('upload_form', $error);
+        } else {
+            $data = array(
+                'name' => $this->input->post('name'),
+                'category' => $this->input->post('category'),
+                'price' => $this->input->post('price'),
+                'describe' => $this->input->post('describe'),
+                'picture' => $this->upload->data('file_name')
+            );
+            $index = array('id' => $this->input->post('id'));
+            $this->multikarya->updateData("product", $data, $index);
+            redirect('admin/showProduct', 'refresh');
+        }
     }
     public function deleteProduct($id)
     {
