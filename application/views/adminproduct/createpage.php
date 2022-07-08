@@ -246,7 +246,7 @@
                             <div class="form-group row">
                                 <label for="4" class="col-sm-2  col-form-label">Gambar Product</label>
                                 <div class="col-sm-5">
-                                    <input type="file" class="form-control" id="3" name="picture" placeholder="Masukkan gambar" autocomplete="off">
+                                    <input type="file" class="form-control" id="3" name="picture" placeholder="Masukkan gambar" autocomplete="off" required>
                                 </div>
                             </div>
                             <a href="<?= base_url('admin/showProduct'); ?>" class="btn btn-danger">Batal</a>

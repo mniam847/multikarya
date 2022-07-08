@@ -34,8 +34,8 @@ class Admin extends CI_Controller
         $data['totalrecord'] = count($tempVar);
         $data['totalfeedback'] = count($this->multikarya->getAll("testimoni"));
         $totalstar = 0;
-        foreach($this->multikarya->getAll("testimoni") as $star){
-            $totalstar+=$star['star'];
+        foreach ($this->multikarya->getAll("testimoni") as $star) {
+            $totalstar += $star['star'];
         }
         $totalstar /= count($this->multikarya->getAll("testimoni"));
         $data['percentfeedback'] = $totalstar;
@@ -107,7 +107,7 @@ class Admin extends CI_Controller
 
 
         $config['upload_path']          = './uploads/';
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
         $config['max_size']             = 100;
         $config['max_width']            = 1024;
         $config['max_height']           = 768;
