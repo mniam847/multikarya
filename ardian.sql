@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2022 at 12:06 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Jul 08, 2022 at 08:15 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -41,12 +40,12 @@ CREATE TABLE `about` (
 
 INSERT INTO `about` (`id`, `name`, `value`, `description`) VALUES
 (1, 'company', 'Multi Karya', 'Nama Perusahaan'),
-(2, 'address', 'jalanin aja dulu', 'Alamat Perusahaan'),
-(3, 'telp', '024', 'Telepon official perusahaan'),
+(2, 'address', 'Jl. Moh. Yamin No.12, Banaran Barat, Bandarjo, Kec. Ungaran Bar., Kabupaten Semarang, Jawa Tengah 50511', 'Alamat Perusahaan'),
+(3, 'telp', '(024)6924615', 'Telepon official perusahaan'),
 (4, 'email', 'multikarya@gmail.com', 'Email Perusahaan'),
 (5, 'foreword', 'Multi Karya adalah bidang usaha jasa yang berjalan pada usaha percetakan, layanan kami meliputi pembuatan iklan melalui baligo, spanduk, stiker, banner, dan lain-lain.', 'Kata pengantar'),
 (6, 'cs', '6282223960591', 'nomer cs order'),
-(7, 'vm', 'Melayani percetakan segala platfoem dengan fast respon dan selalu akti 24 jam demi kenyamanan usaha anda', 'visi misi');
+(7, 'vm', 'CV. Multi Karya didirikan pada sekitar tahun 1900an sebagai percetakan kecil membuka pintunya di Ungaran dengan tujuan yang sederhana dan jelas untuk menyediakan layanan pencetakan berkualitas tinggi di Semarang tentunya masih didaerah kabupaten.', 'visi misi');
 
 -- --------------------------------------------------------
 
@@ -91,9 +90,9 @@ CREATE TABLE `invoice` (
 --
 
 INSERT INTO `invoice` (`id`, `name`, `product`, `message`, `date_input`, `dateline`, `status`, `price`) VALUES
-(1, 'customer 1', 1, 'cepat dikirim', '', '', 1, 150000),
-(3, 'Customer 3', 2, 'Apa aja', '2022-07-07', '2022-07-08', 2, 100000),
-(4, 'custom', 4, 'segera ya', '2022-07-08', '2022-07-15', 1, 1000000);
+(3, 'Customer 1', 2, 'Apa aja', '2022-07-07', '2022-07-08', 1, 100000),
+(4, 'Customer 2', 30, 'segera dikirim', '2022-07-08', '2022-07-15', 2, 1000000),
+(5, 'Customer 3', 9, 'Pengiriman aman', '2022-07-08', '2022-07-29', 0, 500000);
 
 -- --------------------------------------------------------
 
@@ -115,13 +114,18 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `category`, `price`, `picture`, `describe`) VALUES
-(1, 'Kamera', 'Aksesoris', 150000, 'cat-4.JPG', 'Apa aja boleh'),
-(5, 'sepatu', 'shoes', 56787, 'cat-62.jpg', 'Sepatu keren'),
-(6, 'baju', 'dress', 50000, 'cat-11.jpg', 'bhjbdjb'),
-(7, 'baju wanita', 'Banner', 70000, 'product-1.jpg', 'fhjdahkdb'),
-(8, 'baju anak', 'dress', 5789000, 'cat-3.jpg', 'gwgdwb'),
-(10, 'Tas', 'Kartu_Nama', 10000, 'payments1.png', 'Tas wanita yang ilegan'),
-(11, 'MMT 10', 'MMT', 60000, 'vendor-8.jpg', 'MMT ukuran 3 x 5 m');
+(12, 'Undangan A', 'undangan', 10000, 'g1.jpeg', 'undangan 1 pieces'),
+(13, 'Undangan B', 'undangan', 10000, 'g2.jpeg', 'undangan 1 pieces'),
+(14, 'Undangan C', 'undangan', 9000, 'g3.jpeg', 'undangan 1 pcs'),
+(15, 'Undangan D', 'undangan', 12000, 'g4.jpeg', 'undangan 1 pieces'),
+(16, 'Undangan E', 'undangan', 11000, 'g5.jpeg', 'Undangan 1 pieces'),
+(17, 'Undangan F', 'undangan', 10500, 'g6.jpeg', 'undangan 1 pieces'),
+(18, 'kalender A', 'kalender', 50000, 'kalender1.jfif', 'kalender satuan'),
+(19, 'kalender B', 'kalender', 60000, 'kalender2.jfif', 'kalender satuan'),
+(20, 'kalender C', 'kalender', 25000, 'kalender3.jfif', 'kalender satuan'),
+(21, 'Banner A', 'banner', 150000, 'baner1.jfif', 'banner grade A'),
+(22, 'Banner B', 'banner', 120000, 'baner2.jfif', 'Banner Grade B'),
+(23, 'Banner C', 'banner', 100000, 'baner3.jfif', 'Banner grade C');
 
 -- --------------------------------------------------------
 
@@ -163,7 +167,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `role`, `password`) VALUES
-(1, 'ardiansyah', 1, 'password');
+(1, 'adminmultikarya', 1, 'password');
 
 --
 -- Indexes for dumped tables
@@ -225,13 +229,13 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `testimoni`
