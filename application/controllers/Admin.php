@@ -56,15 +56,32 @@ class Admin extends CI_Controller
     {
         $data['user'] = $this->session->userdata('name');
 
-        $submit_data = array(
-            'name' => $this->input->post('name'),
-            'category' => $this->input->post('category'),
-            'price' => $this->input->post('price'),
-            'describe' => $this->input->post('describe'),
-            'picture' => "default.jpg"
-        );
-        $this->multikarya->inputData("product", $submit_data);
-        redirect('admin/showProduct', 'refresh');
+        //load uploading file library
+        $config['upload_path'] = './uploads/';
+        // $config['allowed_types'] = 'jpg|png|jpeg|JPG|PNG|JPEG';
+        // $config['max_size']    = '1000'; //KB
+        // $config['max_width']  = '2000'; //pixels
+        // $config['max_height']  = '2000'; //pixels
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload()) {
+            //file gagal diupload -> kembali ke form tambah
+            $this->load->view('adminproduct/createpage', $data);
+        } else {
+            //file berhasil diupload -> lanjutkan ke query INSERT
+            // eksekusi query INSERT
+            $picture = $this->upload->data();
+            $submit_data = array(
+                'name' => $this->input->post('name'),
+                'category' => $this->input->post('category'),
+                'price' => $this->input->post('price'),
+                'describe' => $this->input->post('describe'),
+                'picture'            => $picture['picture']
+            );
+            $this->multikarya->inputData("product", $submit_data);
+            redirect('admin/showProduct', 'refresh');
+        }
     }
     public function showProduct()
     {

@@ -10,21 +10,19 @@
     <meta name="author" content="">
 
     <title>Admin - Dashboard</title>
-    <link rel="icon" type="image/png" href="<?= base_url()?>assets/logo/logo.png">
+    <link rel="icon" type="image/png" href="<?= base_url() ?>assets/logo/logo.png">
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo base_url(); ?>assets/admin/aset/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url(); ?>assets/admin/aset/fontawesome/css/fontawesome.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/admin/aset/fontawesome/css/brands.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/admin/aset/fontawesome/css/solid.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url(); ?>assets/admin/aset/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
+
 
 </head>
 
@@ -105,7 +103,7 @@
                 </a>
             </li>
 
-            
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -148,11 +146,9 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
@@ -166,18 +162,14 @@
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -187,18 +179,15 @@
                                 </form>
                             </div>
                         </li>
-                        
+
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b><?= $user ?></b></span>
-                                <img class="img-profile rounded-circle"
-                                    src="<?php echo base_url(); ?>assets/admin/aset/img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="<?php echo base_url(); ?>assets/admin/aset/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
@@ -229,34 +218,41 @@
                             <h6 class="m-0 font-weight-bold text-primary g-col-6">DataProduct</h6>
                         </div>
                         <div class="card-body col-sm-8">
-                            <form action="<?= base_url('admin/createProduct'); ?>" method="post">
-                                <div class="form-group row">
-                                    <label for="1" class="col-sm-2  col-form-label">Nama Product</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="1" name="name" placeholder="Tulis nama produk" autocomplete="off">
-                                    </div>
+                            <?php echo form_open_multipart('admin/createProduct'); ?>
+                            <div class="form-group row">
+                                <label for="1" class="col-sm-2  col-form-label">Nama Product</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="1" name="name" placeholder="Tulis nama produk" autocomplete="off">
                                 </div>
-                                <div class="form-group row">
-                                    <label for="2" class="col-sm-2  col-form-label">Kategory Product</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="2" name="category" placeholder="Tulis kategori produk" autocomplete="off">
-                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="2" class="col-sm-2  col-form-label">Kategory Product</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="2" name="category" placeholder="Tulis kategori produk" autocomplete="off">
                                 </div>
-                                <div class="form-group row">
-                                    <label for="3" class="col-sm-2  col-form-label">Harga Product</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="3" name="price" placeholder="Masukkan harga produk" autocomplete="off">
-                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="3" class="col-sm-2  col-form-label">Harga Product</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="3" name="price" placeholder="Masukkan harga produk" autocomplete="off">
                                 </div>
-                                <div class="form-group row">
-                                    <label for="4" class="col-sm-2  col-form-label">Keterangan Product</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="3" name="describe" placeholder="Masukkan keterangan" autocomplete="off">
-                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="4" class="col-sm-2  col-form-label">Keterangan Product</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="3" name="describe" placeholder="Masukkan keterangan" autocomplete="off">
                                 </div>
-                                <a href="<?= base_url('admin/showProduct'); ?>" class="btn btn-danger">Batal</a>
-                                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
-                            </form>
+                            </div>
+                            <div class="form-group row">
+                                <label for="4" class="col-sm-2  col-form-label">Gambar Product</label>
+                                <div class="col-sm-5">
+                                    <input type="file" class="form-control" id="3" name="picture" placeholder="Masukkan gambar" autocomplete="off">
+                                </div>
+                            </div>
+                            <a href="<?= base_url('admin/showProduct'); ?>" class="btn btn-danger">Batal</a>
+                            <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                            <!-- </form> -->
+                            <?php echo form_close(); ?>
                         </div>
                     </div>
 
@@ -288,8 +284,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
