@@ -115,20 +115,29 @@
 
     <!-- Shop Detail Start -->
     <div class="container-fluid py-5">
+        <h3 class="font-weight-semi-bold d-flex justify-content-center"><?= $company ?></h3>
         <div class="row px-xl-5">
-            <div class="col-lg-5 pb-5">
+            <div class="col-lg-3 pb-5">
                 <div id="product-carousel" class="carousel slide" data-ride="carousel">
-                    <div class=" border">
+                    <!-- <div class=" border"> -->
                         <div class="carousel-item active">
-                            <img class="w-100 h-100" src="<?= base_url() ?>assets/logo/logo.png?>" alt="Image">
+                            <img class="w-75 h-75" src="<?= base_url() ?>assets/logo/logo.png?>" alt="Image">
                         </div>
-                    </div>
+                        <div class="carousel-item">
+                            <img class="w-75 h-75" src="<?= base_url() ?>assets/carousel/g1.jpg?>" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="w-75 h-75" src="<?= base_url() ?>assets/carousel/g2.jpg?>" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="w-75 h-75" src="<?= base_url() ?>assets/carousel/g3.jpg?>" alt="Image">
+                        </div>
+                    <!-- </div> -->
                 </div>
             </div>
 
             <div class="col-lg-7 pb-5">
-                <h3 class="font-weight-semi-bold"><?= $company ?></h3>
-                <div class="row px-xl-5">
+                <div class="row px-xl-4">
                     <div class="col">
                         <div class="nav nav-tabs justify-content-start border-secondary mb-4">
                             <a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-1">Description</a>
