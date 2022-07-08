@@ -76,7 +76,22 @@
     <!-- Navbar Start -->
     <div class="container-fluid">
         <div class="row border-top px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
+                    <h6 class="m-0">Categories</h6>
+                    <i class="fa fa-angle-down text-dark"></i>
+                </a>
+                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 1;">
+                    <div class="navbar-nav w-100 overflow-hidden" style="height: 210px">
 
+                        <a href="<?= base_url("product/kategori/MMT") ?>" class="nav-item nav-link">MMT</a>
+                        <a href="<?= base_url("product/kategori/Banner") ?>" class="nav-item nav-link">Banner</a>
+                        <a href="<?= base_url("product/kategori/Kalender") ?>" class="nav-item nav-link">Kalender</a>
+                        <a href="<?= base_url("product/kategori/Undangan") ?>" class="nav-item nav-link">Undangan</a>
+                        <a href="<?= base_url("product/kategori/Kartu_Nama") ?>" class="nav-item nav-link">Kartu Nama</a>
+                    </div>
+                </nav>
+            </div>
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
@@ -189,7 +204,7 @@
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <a href="" class="text-decoration-none">
-                    <h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">CV</span><?= $company?></h1>
+                    <h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">CV</span><?= $company ?></h1>
                 </a>
 
                 <p><?= $foreword; ?>.</p>
@@ -228,7 +243,7 @@
         <div class="row border-top border-light mx-xl-5 py-4">
             <div class="col-md-6 px-xl-0">
                 <p class="mb-md-0 text-center text-md-left text-dark">
-                    &copy; <a class="text-dark font-weight-semi-bold" href="#"><?= $company?></a>. All Rights Reserved. Designed
+                    &copy; <a class="text-dark font-weight-semi-bold" href="#"><?= $company ?></a>. All Rights Reserved. Designed
                     by
                     <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a><br>
                     Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>

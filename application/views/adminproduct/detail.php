@@ -237,7 +237,14 @@
                                         <div class="form-group row">
                                             <label for="2" class="col-sm-2  col-form-label">Kategory Product</label>
                                             <div class="col-sm-5">
-                                                <input type="text" value="<?= $product[0]['category']; ?>" class="form-control" id="2" name="category" placeholder="Tulis kategori produk" autocomplete="off">
+                                                <select class="form-select" aria-label="Default select example" name="category">
+                                                    <option selected><?= $product[0]['category']; ?></option>
+                                                    <option value="MMT">MMT</option>
+                                                    <option value="Banner">Banner</option>
+                                                    <option value="Kalender">Kalender</option>
+                                                    <option value="Undangan">Undangan</option>
+                                                    <option value="Kartu_Nama">Kartu Nama</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form-group row">

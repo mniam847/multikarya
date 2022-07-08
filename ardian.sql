@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2022 at 06:19 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Jul 08, 2022 at 12:06 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -91,8 +92,8 @@ CREATE TABLE `invoice` (
 
 INSERT INTO `invoice` (`id`, `name`, `product`, `message`, `date_input`, `dateline`, `status`, `price`) VALUES
 (1, 'customer 1', 1, 'cepat dikirim', '', '', 1, 150000),
-(2, 'customer 2', 1, 'packing rapi', '', '', 0, 150000),
-(3, 'Customer 3', 2, 'Apa aja', '2022-07-07', '2022-07-08', 2, 100000);
+(3, 'Customer 3', 2, 'Apa aja', '2022-07-07', '2022-07-08', 2, 100000),
+(4, 'custom', 4, 'segera ya', '2022-07-08', '2022-07-15', 1, 1000000);
 
 -- --------------------------------------------------------
 
@@ -117,9 +118,10 @@ INSERT INTO `product` (`id`, `name`, `category`, `price`, `picture`, `describe`)
 (1, 'Kamera', 'Aksesoris', 150000, 'cat-4.JPG', 'Apa aja boleh'),
 (5, 'sepatu', 'shoes', 56787, 'cat-62.jpg', 'Sepatu keren'),
 (6, 'baju', 'dress', 50000, 'cat-11.jpg', 'bhjbdjb'),
-(7, 'baju wanita', 'dress', 70000, 'cat-21.jpg', 'fhjdahkdb'),
+(7, 'baju wanita', 'Banner', 70000, 'product-1.jpg', 'fhjdahkdb'),
 (8, 'baju anak', 'dress', 5789000, 'cat-3.jpg', 'gwgdwb'),
-(9, 'sesuatu', 'sesuatu', 20000, 'cat-63.jpg', 'sesuatu');
+(10, 'Tas', 'Kartu_Nama', 10000, 'payments1.png', 'Tas wanita yang ilegan'),
+(11, 'MMT 10', 'MMT', 60000, 'vendor-8.jpg', 'MMT ukuran 3 x 5 m');
 
 -- --------------------------------------------------------
 
@@ -223,13 +225,13 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `testimoni`
