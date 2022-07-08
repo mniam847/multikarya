@@ -159,6 +159,18 @@
     </div>
     <!-- Contact End -->
 
+    <!-- Gmaps -->
+    <div class="container-fluid pt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Google Maps</span></h2>
+        </div>
+        <div class="row px-xl-5">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.4394496623072!2d110.4090351!3d-7.1223827!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7088b949d182c1%3A0x79fc9d91ba59a659!2sUD.%20MULTI%20KARYA%20PERCETAKAN!5e0!3m2!1sen!2sid!4v1649426697619!5m2!1sen!2sid" 
+              width="3000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <!-- Contact End -->
+
 
     <!-- Footer Start -->
     <div class="container-fluid bg-secondary text-dark mt-5 pt-5">

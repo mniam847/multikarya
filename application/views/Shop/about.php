@@ -20,7 +20,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="<?= base_url("assets/shop/lib/owlcarousel/assets/owl.carousel.min.css") ?>" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
@@ -93,7 +92,6 @@
                             <a href="<?= base_url("profil") ?>" class="nav-item nav-link active">About</a>
                             <a href="<?= base_url("contact") ?>" class="nav-item nav-link">Contact Us</a>
                         </div>
-
                     </div>
                 </nav>
             </div>
@@ -129,12 +127,12 @@
             </div>
 
             <div class="col-lg-7 pb-5">
+                <h3 class="font-weight-semi-bold"><?= $company ?></h3>
                 <div class="row px-xl-5">
-                    <h3 class="font-weight-semi-bold"><?= $company ?></h3>
                     <div class="col">
-                        <div class="nav nav-tabs justify-content-center border-secondary mb-4">
+                        <div class="nav nav-tabs justify-content-start border-secondary mb-4">
                             <a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-1">Description</a>
-                            <!-- <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-2">Information</a> -->
+                            <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-2">Struktur Kepegawaian</a>
                             <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-3">Reviews (<?= count($testimoni) ?>)</a>
                         </div>
                         <div class="tab-content">
@@ -142,44 +140,13 @@
                                 <h4 class="mb-3">Visi dan Misi</h4>
                                 <p><?= $vm ?></p>
                             </div>
-                            <!-- <div class="tab-pane fade" id="tab-pane-2">
-                                <h4 class="mb-3">Additional Information</h4>
-                                <p>Eos no lorem eirmod diam diam, eos elitr et gubergren diam sea. Consetetur vero aliquyam invidunt duo dolores et duo sit. Vero diam ea vero et dolore rebum, dolor rebum eirmod consetetur invidunt sed sed et, lorem duo et eos elitr, sadipscing kasd ipsum rebum diam. Dolore diam stet rebum sed tempor kasd eirmod. Takimata kasd ipsum accusam sadipscing, eos dolores sit no ut diam consetetur duo justo est, sit sanctus diam tempor aliquyam eirmod nonumy rebum dolor accusam, ipsum kasd eos consetetur at sit rebum, diam kasd invidunt tempor lorem, ipsum lorem elitr sanctus eirmod takimata dolor ea invidunt.</p>
+                            <div class="tab-pane fade" id="tab-pane-2">
+                                <h4 class="mb-3">Struktur Kepegawaian</h4>
+                                <p>Berikut struktur Kepegawaian yang di CV MULTI KARYA Ungaran.</p>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item px-0">
-                                                Sit erat duo lorem duo ea consetetur, et eirmod takimata.
-                                            </li>
-                                            <li class="list-group-item px-0">
-                                                Amet kasd gubergren sit sanctus et lorem eos sadipscing at.
-                                            </li>
-                                            <li class="list-group-item px-0">
-                                                Duo amet accusam eirmod nonumy stet et et stet eirmod.
-                                            </li>
-                                            <li class="list-group-item px-0">
-                                                Takimata ea clita labore amet ipsum erat justo voluptua. Nonumy.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item px-0">
-                                                Sit erat duo lorem duo ea consetetur, et eirmod takimata.
-                                            </li>
-                                            <li class="list-group-item px-0">
-                                                Amet kasd gubergren sit sanctus et lorem eos sadipscing at.
-                                            </li>
-                                            <li class="list-group-item px-0">
-                                                Duo amet accusam eirmod nonumy stet et et stet eirmod.
-                                            </li>
-                                            <li class="list-group-item px-0">
-                                                Takimata ea clita labore amet ipsum erat justo voluptua. Nonumy.
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <img style="height: 500px; width:500px;" src="<?= base_url() ?>uploads/kepegawaian.jpg" alt="">
                                 </div>
-                            </div> -->
+                            </div>
                             <div class="tab-pane fade" id="tab-pane-3">
                                 <div class="row">
                                     <div class="col-md-6">

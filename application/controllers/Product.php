@@ -71,6 +71,7 @@ class Product extends CI_Controller
     {
         // template
         // ------------------------------------------------------------------------------------------------------------
+        $data['category'] = $category;
         $tempVar = $this->multikarya->getData("about", array('name' => 'company'));
         $tempVar = $tempVar[0]["value"];
         $data['company'] = $tempVar;
